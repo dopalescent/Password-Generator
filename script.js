@@ -44,14 +44,15 @@ function writePassword() {
     return;
   }
 
-  // var password = generatePassword();
+  var password = generatePassword();
 
-  // function generatePassword () {
-  //   for(i = 0, i < passLength, i++) {
-  //     test[i] = chars[Math.floor(Math.random() * chars.length)];
-  //   };
-  //   console.log(test);
-  // };
+  function generatePassword () {
+    var test = [];
+    for (var i = 0; i < passLength; i++) {
+      test[i] = chars[Math.floor(Math.random() * chars.length)];
+    };
+    console.log(test.join(''));
+  };
 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -59,15 +60,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-// var test = lower[Math.floor(Math.random() * lower.length)];
-// console.log(test);
-
-var test = [];
-passLength = 8;
-for (var i = 0; i < passLength; i++) {
-  test[i] = lower[Math.floor(Math.random() * lower.length)];
-};
-test = test.join('');
-console.log(test);
