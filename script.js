@@ -9,7 +9,7 @@ var specChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+'
 // Write password to the #password input
 function writePassword() {
   var chars = []
-  var passLength = window.prompt("Choose password length: enter a numeric value between 8 and 128.")
+  var passLength = window.prompt("Choose password length: enter a numeric value between 8 and 128.");
   if (isNaN(passLength)) {
     window.alert("Error: Password length must be entered as a numeric value.");
     return;
@@ -38,6 +38,10 @@ function writePassword() {
     chars = chars.concat(specChars);
     console.log(chars);
   }
+  if (!askLower && !askUpper && !askNumber && !askSpec) {
+    window.alert("Error: At least one character type must be selected.");
+    return;
+  }
 
   // var password = generatePassword();
   // function generatePassword () {};
@@ -49,16 +53,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-// if (askLower) {
-//   chars = chars.concat(lower);
-//   console.log(chars);
-// } else {
-//   chars = chars.concat(upper);
-//   console.log(chars);
-// }
-
-// chars = chars.concat(lower);
-// console.log(chars);
-// chars = chars.concat(upper);
-// console.log(chars);
+var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+var test = Math.floor(Math.random() * 8);
+console.log(test);
