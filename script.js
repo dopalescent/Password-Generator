@@ -47,11 +47,12 @@ function writePassword() {
   var password = generatePassword();
 
   function generatePassword () {
-    var test = [];
+    var newPassword = [];
     for (var i = 0; i < passLength; i++) {
-      test[i] = chars[Math.floor(Math.random() * chars.length)];
+      newPassword[i] = chars[Math.floor(Math.random() * chars.length)];
     };
-    console.log(test.join(''));
+    console.log(newPassword.join(''));
+    return newPassword.join('');
   };
 
   var passwordText = document.querySelector("#password");
