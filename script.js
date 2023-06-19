@@ -9,22 +9,27 @@ var specChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+'
 // Write password to the #password input
 function writePassword() {
   var chars = []
-  // function checkUpper() {
-  //   var test = false;
-  //   for (var j = 0; j < upper.length; j++) {
-  //     if (char.includes(upper[j])) {
-  //       console.log(upper[j])
-  //       test = true;
-  //       console.log(test)
-  //     };
-  //   }
-  //   console.log(test)
-  //   if (!test) {
-  //     console.log("test fail")
-  //   } else {
-  //     console.log("test pass")
-  //   }
-  // }
+  var newPassword = [];
+  var check
+
+  function checker() {
+    var test = false;
+    for (var j = 0; j < check.length; j++) {
+      if (newPassword.includes(check[j])) {
+        console.log(check[j])
+        test = true;
+        console.log(test)
+      };
+    }
+    console.log(test)
+    if (!test) {
+      console.log("test fail");
+      generatePassword();
+      return;
+    } else {
+      console.log("test pass");
+    }
+  }
 
 
   var passLength = window.prompt("Choose password length: enter a numeric value between 8 and 128.");
@@ -32,7 +37,7 @@ function writePassword() {
     window.alert("Error: Password length must be entered as a numeric value.");
     return;
   }
-  if (passLength > 128 || passLength < 8) {
+  if (passLength > 128 || passLength < 4) {
     window.alert("Error: Password length must be between 8 and 128.");
     return;
   }
@@ -64,12 +69,16 @@ function writePassword() {
   var password = generatePassword();
 
   function generatePassword () {
-    var newPassword = [];
     for (var i = 0; i < passLength; i++) {
       newPassword[i] = chars[Math.floor(Math.random() * chars.length)];
     };
-    // console.log(newPassword.some(lower.includes()))
     console.log(newPassword.join(''));
+    if (askLower) {
+      console.log("ask registered")
+      check = lower;
+      checker();
+    }
+
     return newPassword.join('');
   };
 
@@ -80,20 +89,20 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-lower.unshift("A");
-console.log(lower);
+// lower.unshift("A");
+// console.log(lower);
 // for (var j = 0; j < lower.length; j++) {
 //   lower.some(upper.includes(j));
 // }
-console.log(lower.includes("A"))
+// console.log(lower.includes("A"))
 
-for (var j = 0; j < upper.length; j++) {
-  if (lower.includes(upper[j])) {
-    console.log(upper[j])
-  } else {
-    console.log("none found")
-  }
-}
+// for (var j = 0; j < upper.length; j++) {
+//   if (lower.includes(upper[j])) {
+//     console.log(upper[j])
+//   } else {
+//     console.log("none found")
+//   }
+// }
 
 
 // function checkUpper() {
@@ -114,23 +123,23 @@ for (var j = 0; j < upper.length; j++) {
 // }
 // checkUpper();
 
-function checkUpper() {
-  var test = false;
-  var check = upper;
-  check = specChars;
-  // lower.unshift("#");
-  for (var j = 0; j < check.length; j++) {
-    if (lower.includes(check[j])) {
-      console.log(check[j])
-      test = true;
-      console.log(test)
-    };
-  }
-  console.log(test)
-  if (!test) {
-    console.log("test fail")
-  } else {
-    console.log("test pass")
-  }
-}
-checkUpper();
+// function checker() {
+//   var test = false;
+//   var check = upper;
+//   check = specChars;
+// lower.unshift("#");
+//   for (var j = 0; j < check.length; j++) {
+//     if (lower.includes(check[j])) {
+//       console.log(check[j])
+//       test = true;
+//       console.log(test)
+//     };
+//   }
+//   console.log(test)
+//   if (!test) {
+//     console.log("test fail")
+//   } else {
+//     console.log("test pass")
+//   }
+// }
+// checker();
