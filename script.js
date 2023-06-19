@@ -37,7 +37,7 @@ function writePassword() {
     window.alert("Error: Password length must be entered as a numeric value.");
     return;
   }
-  if (passLength > 128 || passLength < 4) {
+  if (passLength > 128 || passLength < 8) {
     window.alert("Error: Password length must be between 8 and 128.");
     return;
   }
@@ -74,10 +74,25 @@ function writePassword() {
     };
     console.log(newPassword.join(''));
     if (askLower) {
-      console.log("ask registered")
+      console.log("lower ask registered")
       check = lower;
       checker();
-    }
+    };
+    if (askUpper) {
+      console.log("upper ask registered")
+      check = upper;
+      checker();
+    };
+    if (askNumber) {
+      console.log("number ask registered")
+      check = numbers;
+      checker();
+    };
+    if (askSpec) {
+      console.log("spec ask registered")
+      check = specChars;
+      checker();
+    };
 
     return newPassword.join('');
   };
