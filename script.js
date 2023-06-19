@@ -51,6 +51,7 @@ function writePassword() {
     for (var i = 0; i < passLength; i++) {
       newPassword[i] = chars[Math.floor(Math.random() * chars.length)];
     };
+    // console.log(newPassword.some(lower.includes()))
     console.log(newPassword.join(''));
     return newPassword.join('');
   };
@@ -61,3 +62,27 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+lower.unshift("A");
+console.log(lower);
+// for (var j = 0; j < lower.length; j++) {
+//   lower.some(upper.includes(j));
+// }
+console.log(lower.includes("A"))
+// var test = function () {}
+// console.log(test);
+for (var j = 0; j < upper.length; j++) {
+  if (lower.includes(upper[j])) {
+    console.log(upper[j])
+  } else {
+    console.log("none found")
+  }
+}
+
+for (var j = 0; j < upper.length; j++) {
+  if (lower.includes(upper[j])) {
+    console.log(upper[j])
+  } else {
+    console.log("none found")
+  }
+}
