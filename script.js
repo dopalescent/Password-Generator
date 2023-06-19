@@ -9,6 +9,23 @@ var specChars = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+'
 // Write password to the #password input
 function writePassword() {
   var chars = []
+  // function checkUpper() {
+  //   var test = false;
+  //   for (var j = 0; j < upper.length; j++) {
+  //     if (char.includes(upper[j])) {
+  //       console.log(upper[j])
+  //       test = true;
+  //       console.log(test)
+  //     };
+  //   }
+  //   console.log(test)
+  //   if (!test) {
+  //     console.log("test fail")
+  //   } else {
+  //     console.log("test pass")
+  //   }
+  // }
+
 
   var passLength = window.prompt("Choose password length: enter a numeric value between 8 and 128.");
   if (isNaN(passLength)) {
@@ -79,11 +96,32 @@ for (var j = 0; j < upper.length; j++) {
 }
 
 
+// function checkUpper() {
+//   var test = false;
+//   for (var j = 0; j < upper.length; j++) {
+//     if (lower.includes(upper[j])) {
+//       console.log(upper[j])
+//       test = true;
+//       console.log(test)
+//     };
+//   }
+//   console.log(test)
+//   if (!test) {
+//     console.log("test fail")
+//   } else {
+//     console.log("test pass")
+//   }
+// }
+// checkUpper();
+
 function checkUpper() {
   var test = false;
-  for (var j = 0; j < upper.length; j++) {
-    if (lower.includes(upper[j])) {
-      console.log(upper[j])
+  var check = upper;
+  check = specChars;
+  // lower.unshift("#");
+  for (var j = 0; j < check.length; j++) {
+    if (lower.includes(check[j])) {
+      console.log(check[j])
       test = true;
       console.log(test)
     };
