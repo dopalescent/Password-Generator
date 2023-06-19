@@ -69,15 +69,6 @@ console.log(lower);
 //   lower.some(upper.includes(j));
 // }
 console.log(lower.includes("A"))
-// var test = function () {}
-// console.log(test);
-for (var j = 0; j < upper.length; j++) {
-  if (lower.includes(upper[j])) {
-    console.log(upper[j])
-  } else {
-    console.log("none found")
-  }
-}
 
 for (var j = 0; j < upper.length; j++) {
   if (lower.includes(upper[j])) {
@@ -86,3 +77,22 @@ for (var j = 0; j < upper.length; j++) {
     console.log("none found")
   }
 }
+
+
+function checkUpper() {
+  var test = false;
+  for (var j = 0; j < upper.length; j++) {
+    if (lower.includes(upper[j])) {
+      console.log(upper[j])
+      test = true;
+      console.log(test)
+    };
+  }
+  console.log(test)
+  if (!test) {
+    console.log("test fail")
+  } else {
+    console.log("test pass")
+  }
+}
+checkUpper();
