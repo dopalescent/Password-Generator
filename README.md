@@ -1,4 +1,4 @@
-# <Challenge 2: Professional Portfolio>
+# <Challenge 3: Password Generator>
 
 ## Description
 
