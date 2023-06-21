@@ -14,7 +14,12 @@
 
 ## Usage
 
-- At time of publication, the project can be found deployed at https://dopalescent.github.io/Password-Generator/
+- To use the password generator, first navigate to the webpage. At time of publication, the project can be found deployed at https://dopalescent.github.io/Password-Generator/
+- Once there, click the red button reading "Generate Password".
+- Several popup windows will appear. The first is a prompt to declare a numeric value between 8 and 128 to set the desired password length. Entering a value outside this range, entering a non-numeric value, or entering no value/closing the popup will result in an alert with an error message. The function will be aborted here, but can be restarted by clicking the generate password button again.
+- The following popups will be confirms to opt into uppercase letters, lowercase letters, numbers, and special characters, respectively. Selecting cancel on all four will result in an error message, and the function will be aborted. It can be restarted as stated above.
+- Once acceptable parameters have been set, the generated password will be displayed in the box that previously read "Your Secure Password". Clicking the red button again will launch a new series of popups, and any new passwords will replace the previous in the same box.
+
 
 - The following screenshot previews the deployed project:
 
